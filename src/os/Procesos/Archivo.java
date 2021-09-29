@@ -18,7 +18,7 @@ import javax.swing.JTextArea;
  * @author Oscar
  */
 public class Archivo {
-    private ArrayList<String> listaLineasArchivo = new ArrayList();
+    private ArrayList<String> LineasArchivo = new ArrayList();
     public String Texto;
     public Archivo(File archivo){
         this.listarLineasArchivo(archivo);
@@ -30,7 +30,7 @@ public class Archivo {
             BufferedReader leer = new BufferedReader(new FileReader(archivo));
             String linea = leer.readLine();
             while (linea != null) {
-                listaLineasArchivo.add(linea);
+                LineasArchivo.add(linea);
                 linea = leer.readLine();
             }
             leer.close();
@@ -41,7 +41,7 @@ public class Archivo {
      
     public void mostrarLineas(JTextArea taCodigoFuente) {
         taCodigoFuente.setText("");
-        for (String linea : listaLineasArchivo) {
+        for (String linea : LineasArchivo) {
             taCodigoFuente.append(linea+"\n");
         }
     }
